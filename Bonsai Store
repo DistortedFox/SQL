@@ -1,0 +1,32 @@
+CREATE TABLE Inventory (id integer primary key, Item text, Quanity integer, Section text, Price Integer, Popularity Integer);
+
+INSERT INTO Inventory VALUES
+(1, "Japanese Maple", 5, "Trees", 35.99, 56),
+(2, "Cherry", 3, "Trees", 25.67, 45),
+(3, "Juniper", 9, "Trees", 18.89, 68),
+(4, "Orange", 3, "Trees", 27.89, 20),
+(5, "Bougainvillia", 4, "Trees", 56.87, 58),
+(6, "Flush cutters", 11, "Tools", 24.54, 22),
+(7, "Leaf Pruners", 14, "Tools", 15.65, 13),
+(8, "Wire", 35, "Tools 2", 29.43, 85),
+(9, "Cut Paste", 16, "Accessories", 13.43, 60),
+(10, "Soil", 35, "Accessories", 22.54, 89),
+(11, "Rooting Compound", 22, "Accessories", 12.76, 10),
+(12, "Seive", 18, "Tools", 30.43, 25),
+(13, "Rake", 22, "Tools", 5.98, 23),
+(14, "Tweezers", 19, "Tools", 6.99, 08);
+
+--display the database ordered by price. 
+--SELECT * FROM inventory
+--ORDER BY price desc; 
+
+--what is the avg price of items in the bulk section? 
+SELECT AVG(price) "avg tree item price"
+FROM Inventory
+where section='Trees'; 
+
+--what are the most 5 popular items? 
+SELECT item, price, popularity
+FROM Inventory
+order by popularity desc
+limit 6; 
