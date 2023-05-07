@@ -17,16 +17,17 @@ INSERT INTO Inventory VALUES
 (14, "Tweezers", 19, "Tools", 6.99, 08);
 
 --display the database ordered by price. 
---SELECT * FROM inventory
---ORDER BY price desc; 
+SELECT * FROM inventory
+ORDER BY price desc; 
 
---what is the avg price of items in the bulk section? 
+--what is the avg price of items in the Tree section? 
 SELECT AVG(price) "avg tree item price"
 FROM Inventory
 where section='Trees'; 
 
---what are the most 5 popular items? 
+--what are the most 6 popular items? 
 SELECT item, price, popularity
 FROM Inventory
 order by popularity desc
 limit 6; 
+
