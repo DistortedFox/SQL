@@ -1,0 +1,38 @@
+CREATE TABLE bonsai_store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, section TEXT, popularity INTEGER);
+
+INSERT INTO bonsai_store VALUES
+(1, "Cherry Tree", 59.99, "Trees", 73),
+(2, "Juniper Tree", 24.95, "Trees", 88),
+(3, "Ficus Tree", 33.57, "Trees", 60),
+(4, "Orange Tree", 42.26, "Trees", 58),
+(5, "Japanese Maple", 53.48, "Trees", 85),
+(6, "Chinese Elm", 19.99, "Trees", 52),
+(7, "Azalea", 74.84, "Trees", 92),
+(8, "Leaf Cutter", 7.99, "Tools", 42),
+(9, "Root Rake", 13.26, "Tools", 38),
+(10,"Cut Paste", 15.98, "Shaping", 26),
+(11, "Concave Cutter", 27.14, "Tools", 43),
+(12, "Pruning Shears", 30.22, "Tools", 49),
+(13, "Rooting Compound", 17.01, "Roots", 31),
+(14, "Clay Pot", 25.99, "Pots", 79),
+(15, "Soil", 12.94, "Roots", 90),
+(16, "Branch Splitter", 21.24, "Tools", 21), 
+(17, "Wire", 20.75, "Shaping", 50),
+(18, "Tweezers", 4.99, "Tools", 17)
+;
+
+--Show all
+SELECT * FROM bonsai_store;
+
+--Order by descending Price
+SELECT * FROM bonsai_store ORDER BY price desc;
+ 
+--Average price of just the Bonsai Trees
+SELECT AVG(price) "Average Price of Trees" FROM bonsai_store 
+WHERE section="Trees";
+
+--Top 5 Items from the store
+SELECT name, price, popularity FROM bonsai_store 
+ORDER BY popularity DESC 
+LIMIT 5;
+
